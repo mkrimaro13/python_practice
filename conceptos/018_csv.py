@@ -22,7 +22,7 @@ def read_csv(path):
             population = {header[i]:row[i] for i in range(len(row))} # Creación de diccionario con sintaxis reducida, se usa la cabecera como la llave, y cada línea es el contenido
             data.append(population) # Se añade el contenido a una lista vacía.
         return data
-
+    
 if __name__ == '__main__':
     info = read_csv('./conceptos/data.csv') # Imprime la información en forma de lista
     print(info[0])

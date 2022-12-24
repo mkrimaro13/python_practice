@@ -1,4 +1,4 @@
-def get_population():
+def get_population():   
     key = ['col', 'bol']
     value = ['300', '400']
     return key, value

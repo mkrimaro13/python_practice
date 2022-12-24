@@ -1,11 +1,22 @@
-'''from conceptos.pkg.mod1 import func_1, func_2
-from conceptos.pkg.mod2 import func_3, func_4
-
-print(func_1())
-print(func_2())
-print(func_3())
-print(func_4())
+import csvpractice.filter as filter
+import csvpractice.reader as reader
+import csvpractice.chart as chart
 '''
-import conceptos.pkg
-print(conceptos.pkg.url)
-print(conceptos.pkg.mod1.func_1())
+Este Script, toma la información de los módulos en el paquete csvpractice, para la lectura y filtrado de un archivo csv sacado de www.kaggle.com sobre la población mundial, adicional imprime dos graficas utilizando la librería matplotlib.
+'''
+def run():
+    data = reader.read_csv('./conceptos/data.csv')
+    country = input('Ingresa el país que deseas consultar:     ')
+    filtered_country = filter.country_filter(data, country)
+    print(filtered_country)
+    print(f'La información individual de la población de {country} es: ')
+    filtered_population = filter.header_filter(filtered_country)
+    print(filtered_population)
+    labels = filtered_population.keys()
+    values = filtered_population.values()
+    chart.gen_bar_chart(labels, values)
+    chart.gen_pie_chart(labels, values)
+    exit
+
+if __name__ == '__main__':
+    run()

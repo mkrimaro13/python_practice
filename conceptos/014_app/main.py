@@ -1,4 +1,4 @@
-import mod
+import utils
 
 data = [
     {
@@ -12,10 +12,10 @@ data = [
 ]
     
 def run():
-    keys, values = mod.get_population()
+    keys, values = utils.get_population()
     print(keys, values)
     country = input('Ingresa el país que deseas consultar:  ')  # Se debe escribir el nombre bien para que se pueda realizar la consulta
-    result = mod.population_by_country(data, country)
+    result = utils.population_by_country(data, country)
     print(result)
 
 if __name__ == '__main__':
