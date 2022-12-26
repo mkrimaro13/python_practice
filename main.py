@@ -16,7 +16,9 @@ def run():
     values = filtered_population.values()
     chart.gen_bar_chart(labels, values)
     chart.gen_pie_chart(labels, values)
-    exit
+    labels = filter.column_filter(data).keys()
+    values = filter.column_filter(data).values()
+    chart.gen_pie_chart(labels, values)
 
 if __name__ == '__main__':
     run()
