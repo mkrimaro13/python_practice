@@ -6,7 +6,7 @@ Este Script, toma la información de los módulos en el paquete csvpractice, par
 '''
 def run():
     data = reader.read_csv('./conceptos/data.csv')
-    country = input('Ingresa el país que deseas consultar:     ')
+    country = input('Ingresa el país que deseas consultar: ').title()
     filtered_country = filter.country_filter(data, country)
     print(filtered_country)
     print(f'La información individual de la población de {country} es: ')
