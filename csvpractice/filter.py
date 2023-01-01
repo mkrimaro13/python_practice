@@ -10,11 +10,10 @@ def header_filter(data):
     return fil_head_dict
 
 def column_filter(data):
-    filtered_column = { item['Country/Territory']: item['World Population Percentage'] for item in data} # Toma el país, y su porcentaje en el archivo
+    #filtered_column = { item['Country/Territory']: item['World Population Percentage'] for item in data} # Toma el país, y su porcentaje en el archivo
     # Otra alternativa es utilizando un map: 
-    # countries = list(map(lambda item: item['Country/Territory'], data))
-    # percentage = list(map(lambda item: item['World Population Percentage'], data))
-    return filtered_column
-
+    countries = list(map(lambda item: item['Country/Territory'], data))
+    percentage = list(map(lambda item: item['World Population Percentage'], data))
+    return countries, percentage
 
 
